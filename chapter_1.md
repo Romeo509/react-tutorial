@@ -31,3 +31,43 @@ const TodoItem = ({ todo }) => {
 };
 
 export default TodoItem;
+```
+
+**App.js**
+- Updated `App.js` to import and use the `TodoItem` component.
+- Created a sample state containing a list of todos to demonstrate how the `TodoItem` component would be rendered.
+
+### Code Snippet for App.js
+```javascript
+import React, { useState } from 'react';
+import TodoItem from './components/TodoItem';
+
+const App = () => {
+    const [todos, setTodos] = useState([
+        { id: 1, text: 'Learn React', completed: false },
+        { id: 2, text: 'Build a Todo App', completed: false },
+    ]);
+
+    return (
+        <div>
+            <h1>My Todo List</h1>
+            {todos.map((todo) => (
+                <TodoItem key={todo.id} todo={todo} />
+            ))}
+        </div>
+    );
+};
+
+export default App;
+```
+
+## Conclusion
+
+Chapter 1 provided a strong foundation for our Todo application by establishing the basic structure and the first component. This chapter set the stage for future enhancements, such as adding functionality to create, update, and delete todo items.
+
+### Next Steps
+
+In the upcoming chapters, we will focus on:
+- Adding state management for creating and deleting todos.
+- Styling the application to improve user experience.
+- Implementing local storage to persist data.
